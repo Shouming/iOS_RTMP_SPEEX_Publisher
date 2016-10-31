@@ -8,8 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+#import "SpeexEncoder.h"
+#import "AQRecoder.h"
+#import "RTMPPublisher.h"
 
+@interface ViewController : UIViewController {
+    SpeexEncoder *speexEncoder;
+    AQRecoder *recoder;
+    RTMPPublisher *rtmpPublisher;
+}
+
+@property (nonatomic, strong) NSPipe *audioDataStreamPipe;
+@property (nonatomic, strong) NSFileHandle *audioDataStreamPipeReader;
+@property (nonatomic, strong) NSFileHandle *audioDataStreamPipeWriter;
+@property (nonatomic, retain) RTMPPublisher *rtmpPublisher;
 
 @end
 

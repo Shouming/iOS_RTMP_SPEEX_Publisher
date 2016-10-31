@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		950123E01DC4F207002046C2 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 950123DD1DC4F207002046C2 /* libcrypto.a */; };
-		950123E11DC4F207002046C2 /* librtmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 950123DE1DC4F207002046C2 /* librtmp.a */; };
-		950123E21DC4F207002046C2 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 950123DF1DC4F207002046C2 /* libssl.a */; };
 		950123E51DC4F289002046C2 /* RTMPPublisher.m in Sources */ = {isa = PBXBuildFile; fileRef = 950123E41DC4F289002046C2 /* RTMPPublisher.m */; };
 		950123E71DC4F611002046C2 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 950123E61DC4F611002046C2 /* libz.1.dylib */; };
+		950123E81DC7A450002046C2 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 950123DD1DC4F207002046C2 /* libcrypto.a */; };
+		950123E91DC7A450002046C2 /* librtmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 950123DE1DC4F207002046C2 /* librtmp.a */; };
+		950123EA1DC7A450002046C2 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 950123DF1DC4F207002046C2 /* libssl.a */; };
 		957F9F8F1DB3D27D00C3A853 /* AQRecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 957F9F8E1DB3D27D00C3A853 /* AQRecoder.m */; };
 		95FADC981DB273FE0057ACC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FADC971DB273FE0057ACC7 /* main.m */; };
 		95FADC9B1DB273FE0057ACC7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FADC9A1DB273FE0057ACC7 /* AppDelegate.m */; };
@@ -316,10 +316,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				950123E81DC7A450002046C2 /* libcrypto.a in Frameworks */,
+				950123E91DC7A450002046C2 /* librtmp.a in Frameworks */,
+				950123EA1DC7A450002046C2 /* libssl.a in Frameworks */,
 				950123E71DC4F611002046C2 /* libz.1.dylib in Frameworks */,
-				950123E11DC4F207002046C2 /* librtmp.a in Frameworks */,
-				950123E01DC4F207002046C2 /* libcrypto.a in Frameworks */,
-				950123E21DC4F207002046C2 /* libssl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,7 +358,8 @@
 				9501238E1DC4F207002046C2 /* log.h */,
 				9501238F1DC4F207002046C2 /* rtmp.h */,
 			);
-			path = librtmp;
+			name = librtmp;
+			path = ../SpeexTest/include/librtmp;
 			sourceTree = "<group>";
 		};
 		950123901DC4F207002046C2 /* openssl */ = {
@@ -440,7 +441,8 @@
 				950123DA1DC4F207002046C2 /* x509_vfy.h */,
 				950123DB1DC4F207002046C2 /* x509v3.h */,
 			);
-			path = openssl;
+			name = openssl;
+			path = ../SpeexTest/include/openssl;
 			sourceTree = "<group>";
 		};
 		950123DC1DC4F207002046C2 /* lib */ = {
@@ -451,7 +453,7 @@
 				950123DF1DC4F207002046C2 /* libssl.a */,
 			);
 			name = lib;
-			path = ../../lib;
+			path = ../lib;
 			sourceTree = "<group>";
 		};
 		95FADC8A1DB273FE0057ACC7 = {
@@ -544,7 +546,7 @@
 				95FADE151DB27D1F0057ACC7 /* libspeex */,
 			);
 			name = "speex-1.2rc1";
-			path = "../../speex-1.2rc1";
+			path = "../include/speex-1.2rc1";
 			sourceTree = "<group>";
 		};
 		95FADE011DB27D1F0057ACC7 /* include */ = {
@@ -676,7 +678,7 @@
 				95FAE0721DB27E870057ACC7 /* src */,
 			);
 			name = "libogg-1.3.2";
-			path = "../../libogg-1.3.2";
+			path = "../include/libogg-1.3.2";
 			sourceTree = "<group>";
 		};
 		95FAE0561DB27E870057ACC7 /* include */ = {
@@ -1048,7 +1050,10 @@
 				GCC_PREFIX_HEADER = SpeexTest/PrefixHeader.pch;
 				INFOPLIST_FILE = SpeexTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = /Users/Dennis/Documents/work/GiantView/speex/SpeexTest/lib;
+				LIBRARY_SEARCH_PATHS = (
+					/Users/Dennis/Documents/work/GiantView/speex/SpeexTest/lib,
+					"$(PROJECT_DIR)/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dymin.SpeexTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1063,7 +1068,10 @@
 				GCC_PREFIX_HEADER = SpeexTest/PrefixHeader.pch;
 				INFOPLIST_FILE = SpeexTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = /Users/Dennis/Documents/work/GiantView/speex/SpeexTest/lib;
+				LIBRARY_SEARCH_PATHS = (
+					/Users/Dennis/Documents/work/GiantView/speex/SpeexTest/lib,
+					"$(PROJECT_DIR)/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dymin.SpeexTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
